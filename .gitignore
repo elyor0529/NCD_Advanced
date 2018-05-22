@@ -1,0 +1,10 @@
+/.vs
+/NCD.Infrastructure/obj
+/NCD.Infrastructure/bin
+/NCD.Application/obj
+/NCD.Application/bin
+/NCD/obj
+/NCD/bin
+/NCD/App_Data
+/NCD.UTest/obj
+/NCD.UTest/bin

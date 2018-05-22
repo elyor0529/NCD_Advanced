@@ -1,0 +1,42 @@
+﻿@model RegisterViewModel 
+@{
+    ViewBag.Title = "Register";
+}
+
+@section header {
+    @Html.Partial("_Header")
+}
+
+<div class="form">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <h4>Create a new account.</h4>
+
+        @Html.ValidationSummary(true)
+
+        if (ViewBag.Error != null)
+        {
+            <p class="text-danger">
+                @Html.Raw(ViewBag.Error)
+            </p>
+        }
+
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control responsive", placeholder = "Enter email address" })
+        @Html.ValidationMessageFor(model => model.Email)
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control responsive", placeholder = "Enter password" })
+        @Html.ValidationMessageFor(model => model.Password)
+        @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control responsive", placeholder = "Enter confirmation password" })
+        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        @Html.Captcha(new MvcCaptcha("SampleCaptcha"))
+        @Html.TextBoxFor(model => model.CaptchaCode, new { @class = "form-control responsive", placeholder = "Input this code" })
+        @Html.ValidationMessageFor(model => model.CaptchaCode)
+        <br />
+        <button type="submit" class="button button-success responsive spacer">Register</button>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

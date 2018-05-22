@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Confirmation";
+}
+
+@section header {
+    @Html.Partial("_Header")
+}
+
+<h2>You placed you search sucessfully:</h2>
+
+<p>
+    To see the results of your query, check your email or @Html.ActionLink("do another search.", "Index", "Criminal", null, new { @class = "button button-primary responsive spacer" })
+</p>

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+}
+
+<div class="home form-center">
+    <div class="absolute-center">
+        <img src="~/Content/img/spectre.png" />
+        <h2>National Criminals Database</h2>
+
+        <h4>@ViewBag.Title</h4>
+
+        <p class="text-danger">
+            An error occurred while processing your request.
+        </p>
+
+        <p>
+            @Html.ActionLink("Back", "Index", "Home", null, new { @class = "button button-primary responsive spacer" })
+        </p>
+    </div>
+</div>
